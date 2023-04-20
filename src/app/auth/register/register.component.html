@@ -1,5 +1,5 @@
 <div class="flex h-screen justify-center">
-    <form (ngSubmit)="regSubmit()" class="p-4 rounded-lg m-auto border">
+    <form #myRegisterForm="ngForm" (ngSubmit)="regSubmit()" class="p-4 rounded-lg m-auto border">
         <h1 class="text-center text-xl">Sign Up</h1>
         <div class="my-5 w-full">
             <label for="email">Email</label>
@@ -26,7 +26,7 @@
             Confirm Password field must be valid!
         </div>
         <div class="my-5 w-full">
-            <input class="p-2 w-full bg-purple-700 text-white hover:bg-purple-900 rounded" type="submit">
+            <input type="submit" class="p-2 w-full bg-purple-700 text-white hover:bg-purple-900 rounded" [disabled]="myRegisterForm.form.invalid"/>
         </div>
     </form>
 </div>
